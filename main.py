@@ -25,10 +25,10 @@ def get_num_char(text):
 def report(book_path, num_words, num_char):
     print(f'--- Begin report of {book_path} ---')
     print(f'{num_words} words found in the document')
-    sorted_char=dict(sorted(num_char.items(),reverse=True, key=lambda item: item[1]))
-    for i in sorted_char:
-        if i.isalpha():
-            print(f'The "{i}" character was found {sorted_char[i]} times')
+    sorted_char=sorted(num_char.items(), key=lambda item: item[1], reverse=True)
+    for char, count in sorted_char:
+        if char.isalpha():
+            print(f'The "{char}" character was found {count} times')
     print('--- End Report ---')
 
 
